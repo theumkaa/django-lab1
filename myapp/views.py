@@ -29,3 +29,12 @@ def edit_profile(request):
     else:
         form = UpdateProfileForm(instance=request.user)
     return render(request, 'edit_profile.html', {'form': form})
+
+
+
+
+
+
+
+def home(request):
+    return render(request, 'home.html')
