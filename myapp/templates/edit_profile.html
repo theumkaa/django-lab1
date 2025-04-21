@@ -1,9 +1,9 @@
-{% extends 'base.html' %} 
-{% block content %} 
-<h2>Редактировать профиль</h2> 
-<form method="post"> 
-    {% csrf_token %} 
-    {{ form.as_p }} 
-    <button type="submit" class="btn btn-success">Сохранить</button> 
-</form> 
-{% endblock %} 
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Редактировать профиль</h2>
+<form method="post" class="card p-4 shadow-sm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success mt-3">Сохранить</button>
+</form>
+{% endblock %}

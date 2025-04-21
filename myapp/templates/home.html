@@ -1,4 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать в систему учёта расходов 💸</h1>
+    <p class="lead">Следите за своими финансами легко и удобно.</p>
 
-<h1>Добро пожаловать!</h1>
-<p>Это главная страница.</p>
-<a href="{% url 'login' %}">Войти</a> | <a href="{% url 'register' %}">Регистрация</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}" class="btn btn-primary btn-lg mt-3">Перейти в профиль</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-success btn-lg mt-3">Войти</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-primary btn-lg mt-3 ms-2">Зарегистрироваться</a>
+    {% endif %}
+</div>
+{% endblock %}
