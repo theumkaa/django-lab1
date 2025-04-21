@@ -3,6 +3,9 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .forms import RegisterForm, UpdateProfileForm
+from rest_framework import viewsets
+from .models import Task
+from .serializers import TaskSerializer
 
 def register(request):
     if request.method == 'POST':
@@ -32,7 +35,9 @@ def edit_profile(request):
 
 
 
-
+class TaskViewSet(viewsets.ModelViewSet):
+     queryset = Task.objects.all()
+     serializer_class = TaskSerializer
 
 
 
